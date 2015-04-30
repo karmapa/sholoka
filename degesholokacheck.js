@@ -31,6 +31,8 @@ function merge_reg_counts(content)
          else if(content[i]==='།' && content[i+1]===' '){
          	outstr+='\n';
          	i+=1;
+         }else if(content[i]==='།'){
+            outstr+='\n';
          }
     }
 	outarr=outstr.split(/\r?\n/);   
