@@ -1,0 +1,5 @@
+{ [Error: ENOENT, no such file or directory 'c:\ksana2015\jiangkangyur\063\lj0223_001.xml']
+  errno: -4058,
+  code: 'ENOENT',
+  path: 'c:\\ksana2015\\jiangkangyur\\063\\lj0223_001.xml',
+  syscall: 'open' }
