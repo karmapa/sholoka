@@ -15,8 +15,10 @@ function merge_reg_counts(content){
 
   for(var i=0;i<stridx.length;i++){
      if(i==stridx.length-1){
+     		//console.log(content.substring(stridx[i],content.length));
        dosoloka(content.substring(stridx[i],(content.length)));
      }else{
+     	  //console.log(content.substring(stridx[i],stridx[i+1]));
     	 dosoloka(content.substring(stridx[i],stridx[i+1]));
      	 }
   }
@@ -26,8 +28,7 @@ function dosoloka(subcontent)
 {
 	 var items=[], outstr='', outarr=[];
    var bampo_node_counts=0;
-	 subcontent=subcontent.replace(/<.+?> /g,""); //有些> 後會留一個空白, 不要!
-	 subcontent=subcontent.replace(/<.+?>/g,"");  //有些> 後, 不會有空白, 但整個tag 不要!
+	 subcontent=subcontent.replace(/<.+?> ?/g,""); //有些> 後會留一個空白, 不要!
 	 //過濾包含空白字元所有藏字
 	 subcontent=subcontent.match(/[\u0f00-\u0fff].+/g).toString(); //這時候變Array, 轉string
    subcontent=subcontent.replace(/།  །/g,"། །");
@@ -64,6 +65,7 @@ function dosoloka(subcontent)
 					  items.push([m,len]);
 					  allcount+=len;
 					  bampo_node_counts+=len;
+
 					}else{
 						items.push([m,0]); // \u0F0D
 					}
